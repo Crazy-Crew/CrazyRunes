@@ -1,0 +1,10 @@
+name: CrazyRunes
+authors: ["Ryderbelserion, Badbones69"]
+main: me.badbones69.crazyrunes.CrazyRunes
+version: 1.0
+api-version: '1.13'
+description: A plugin with super cool runes.
+commands:
+  runes:
+    description: Opens the runes menu.
+    aliases: [crazyrunes]

@@ -1,4 +1,4 @@
-package me.BadBones69.CrazyRunes.API;
+package me.badbones69.crazyrunes.api.enums;
 
 public enum Rune {
 	
@@ -11,26 +11,25 @@ public enum Rune {
 	ROCKET("Rocket", 4, 15),
 	SPEED("Speed", 2, 50);
 	
-	private String Name;
-	private Integer MaxLevel;
-	private Integer Power;
+	private final String name;
+	private final Integer maxLevel;
+	private final Integer power;
 	
-	private Rune(String name, Integer maxLevel, Integer power){
-		Name = name;
-		MaxLevel = maxLevel;
-		Power = power;
+	Rune(String name, Integer maxLevel, Integer power){
+		this.name = name;
+		this.maxLevel = maxLevel;
+		this.power = power;
 	}
 	
 	public String getName(){
-		return Name;
+		return this.name;
 	}
 	
 	public Integer getMaxLevel(){
-		return MaxLevel;
+		return this.maxLevel;
 	}
 	
 	public Integer getPower(){
-		return Power;
+		return this.power;
 	}
-	
 }
