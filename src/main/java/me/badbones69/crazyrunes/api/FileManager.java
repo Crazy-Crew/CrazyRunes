@@ -91,7 +91,9 @@ public class FileManager {
 
                             try {
                                 File serverFile = new File(plugin.getDataFolder(), homeFolder + "/" + fileName);
-                                InputStream jarFile = getClass().getResourceAsStream((jarHomeFolders.getOrDefault(fileName, homeFolder)) + "/" + fileName);
+                                InputStream jarFile = getClass()
+                                        .getResourceAsStream((jarHomeFolders
+                                                .getOrDefault(fileName, homeFolder)) + "/" + fileName);
                                 copyFile(jarFile, serverFile);
 
                                 if (fileName.toLowerCase().endsWith(".yml")) customFiles.add(new CustomFile(fileName, homeFolder));
