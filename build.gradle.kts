@@ -6,7 +6,7 @@ plugins {
     `java-library`
 }
 
-rootProject.version = "1.0"
+rootProject.version = "0.3"
 rootProject.group = "me.badbones69.crazyrunes"
 
 dependencies {
