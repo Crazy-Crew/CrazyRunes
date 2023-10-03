@@ -1,4 +1,4 @@
-name: Releases
+name: Release
 
 on:
   push:
@@ -17,7 +17,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: ./gradlew assemble --no-daemon
+      - name: Import gradle properties
+        shell: bash
+        run: cat gradle.properties >> $GITHUB_ENV
+      - name: Assemble
+        run: ./gradlew build modrinth --stacktrace
+      - name: Github Release
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "jars/*.jar"
