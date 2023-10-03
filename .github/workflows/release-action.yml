@@ -28,9 +28,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Import gradle properties
-        shell: bash
-        run: cat gradle.properties >> $GITHUB_ENV
       - name: Assemble
         run: ./gradlew build modrinth --stacktrace
       - name: Github Release
