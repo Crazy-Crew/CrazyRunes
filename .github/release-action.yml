@@ -1,0 +1,24 @@
+name: Releases
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.commits[0].message, '[ci-skip]')"
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - run: ./gradlew assemble --no-daemon
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "jars/*.jar"
+          bodyFile: "changelog.md"
