@@ -23,7 +23,7 @@ jobs:
       - name: Assemble
         run: ./gradlew build modrinth --stacktrace
       - name: Github Release
-      - uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "jars/*.jar"
           bodyFile: "changelog.md"
