@@ -28,9 +28,11 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Assemble
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: Assemble the plugin
         run: ./gradlew assemble --stacktrace
-      - name: Github Release
+      - name: Create a github release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "jars/*.jar"
